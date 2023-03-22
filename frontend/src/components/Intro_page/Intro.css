@@ -253,6 +253,23 @@
     padding: 10px;
     overflow-y: auto;
 }
+
+.cards .query .placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards .query .quote{
+    padding-bottom: 10px;
+}
+
+.cards .query .author{
+    text-align: right;
+    font-size: 0.9rem;
+}
+
 .cards .profile{
     border-width: 2px;
     border-style: solid;

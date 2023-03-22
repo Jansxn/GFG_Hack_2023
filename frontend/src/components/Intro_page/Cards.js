@@ -2,6 +2,22 @@ import React from 'react';
 import { nutrition_info } from './intro_data';
 import { personal_info } from './intro_data';
 
+async function fetchQuote(){
+    try{
+        await fetch("https://type.fit/api/quotes").then(
+            function(response) {
+                return response.json();
+            }).then(function(data) {
+                const quote = data[Math.floor(data.length * Math.random())];
+                document.getElementById("quote").innerHTML = quote['text'];
+                document.getElementById("author").innerHTML = "- "  + quote['author'];
+            });
+    }catch(e){
+        console.error(e);
+    }
+};
+
+
 function Cards() {
 
     const max_cal = 2200;
@@ -28,12 +44,17 @@ function Cards() {
         color = "#E7D948";
     }
 
+    fetchQuote();
+
     return (
         <div className="cards">
 
             <div className = "query">
             <div className='card-title'>Quote of the day!</div><br /><br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Nullam eget felis eget nunc lobortis mattis aliquam faucibus.
+                <div className='quoteholder'>
+                    <div className = "quote" id = "quote"></div>
+                    <div className = "author" id = "author"></div>
+                </div>
             </div>
 
             <div className = "nutrition">
