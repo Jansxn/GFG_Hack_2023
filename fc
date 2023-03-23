@@ -1,0 +1,23 @@
+[33mcommit 74632330223728d90a4334223d5c6a762f04256a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Jason Shaun DMello <jason.dmello21@gmail.com>
+Date:   Thu Mar 23 11:39:00 2023 +0530
+
+    Added login page frontend- localhost/login
+
+[33mcommit f0f39075b911c7ebcc417df6dd5dd7ae54957cd1[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Jason Shaun DMello <jason.dmello21@gmail.com>
+Date:   Wed Mar 22 17:36:59 2023 +0530
+
+    Implemented quotes api to give random quotes (Virajs code)
+
+[33mcommit b4a39a7cae110726246f817b44f13c5be78ac71c[m
+Author: Jason Shaun DMello <jason.dmello21@gmail.com>
+Date:   Wed Mar 22 13:51:56 2023 +0530
+
+    Made seperate folders for frontend and backend to work on
+
+[33mcommit 90e95941808f022fbe562e33331ed526e870ce8e[m
+Author: Jason Shaun DMello <jason.dmello21@gmail.com>
+Date:   Mon Mar 20 12:10:36 2023 +0530
+
+    Initial push

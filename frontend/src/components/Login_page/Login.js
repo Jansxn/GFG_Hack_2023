@@ -35,6 +35,10 @@ function Login(){
                     </div>
                 </div>
 
+                <div className='signup'>
+                    Don't have an account? <Link to='/signup' className='link'>Sign Up</Link>
+                </div>
+
             </form>
         </div>
     )
