@@ -20,7 +20,7 @@ export const personal_info = {
         "Condition 2",
         "Condition 3"
     ],
-    weight: 190,
+    weight: 50,
     height: 170,
     age: 55
 }
