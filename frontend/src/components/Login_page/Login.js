@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
 import { app, auth, database } from '../../index';
-import { getDatabase, ref, update } from 'firebase/database';
+import { getDatabase, ref, update,get } from 'firebase/database';
 
 function login() {
   const email = document.getElementById('email').value;
@@ -19,8 +19,17 @@ function login() {
     .then((userCredential) => {
       const user = userCredential.user;
       const databaseRef = ref(database, `users/${user.uid}`);
-      const userData = { email: user.email };
-      update(databaseRef, userData);
+      const userData = { 
+        email: user.email,
+        fname: '',
+        lname: '',
+      };
+      get(databaseRef).then((snapshot) => {
+        const userRecord = snapshot.val();
+        userData.fname = userRecord.fname;
+        userData.lname = userRecord.lname;
+        update(databaseRef, userData);
+      });
     })
     .catch((error) => {
       const errorCode = error.code;
