@@ -67,7 +67,7 @@ function Cards() {
                 
                 Cal: 
                 <div className = "container">
-                    <div class = "progress calories" style = {{width:Math.min(calories , 100) + "%"}}>{calories}%</div>
+                    <div className = "progress calories" style = {{width:Math.min(calories , 100) + "%"}}>{calories}%</div>
                 </div>
                 Protein:
                 <div className = "container">

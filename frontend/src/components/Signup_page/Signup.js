@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
 import { validateEmail, validatePassword, validateField } from '../authentication';
-import { app, auth, database } from '../../index';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
-var firebase = require('firebase/app');
-require('firebase/auth');
-require('firebase/database');
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getDatabase, ref, set } from 'firebase/database';
+import {app,database,auth} from '../../index';
 function Signup() {
 
   function register(event) {
@@ -25,21 +23,21 @@ function Signup() {
       alert('Enter name');
       return;
     }
-    createUserWithEmailAndPassword(auth,email, password).then(function () {
-      var user = auth.currentUser;
-      var database_ref = database.ref();
-      var user_data = {
-        email: email,
-        password: password,
-        fname: first_name,
-        lname: last_name,
-      }
-      database_ref.child('users/' + user.uid).set(user_data);
-    }).catch(function (error) {
-      var error_code = error.code;
-      var error_message = error.message;
-      alert(error_message);
-    })
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        var user = userCredential.user;
+        const database_ref = ref(database, `users/${user.uid}`);
+        var user_data = {
+          email: email,
+          fname: first_name,
+          lname: last_name,
+        }
+        set(database_ref, user_data);
+      })
+      .catch((error) => {
+        var error_message = error.message;
+        alert(error_message);
+      });
   }
 
   return (
