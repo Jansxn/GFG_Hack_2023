@@ -3,15 +3,15 @@ import React from 'react';
 function Navbar() {
     return (
       <div className="navbar">
-          <nav class = "nav">
+          <nav className = "nav">
             <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle"><span></span></label>
-            <span class = "nav-links">
-                <a class = "nav-item i0">logo</a>
-                <a class = "nav-item i1">Home</a>
-                <div class = "nav-item meet i2">
-                  <label for = "expand-box" class = " meet">Meet</label>
-                  <span class = "meet-items">
+            <label className ="menu__btn" htmlFor="menu__toggle"><span></span></label>
+            <span className = "nav-links">
+                <a className= "nav-item i0">logo</a>
+                <a className= "nav-item i1">Home</a>
+                <div className = "nav-item meet i2">
+                  <label htmlFor = "expand-box" className= " meet">Meet</label>
+                  <span className = "meet-items">
                     <div className = "meet-item">
                     Physchiatrist 
                     </div>
@@ -20,9 +20,9 @@ function Navbar() {
                     </div> 
                   </span>
                 </div>
-                <a class = "nav-item i3">Volunteer</a>
-                <a class = "nav-item i4">Games</a>
-                <a class = "nav-item i5 contact">Contact Us</a>
+                <a className= "nav-item i3">Volunteer</a>
+                <a className = "nav-item i4">Games</a>
+                <a className="nav-item i5 contact">Contact Us</a>
             </span>
           </nav>
       </div>
