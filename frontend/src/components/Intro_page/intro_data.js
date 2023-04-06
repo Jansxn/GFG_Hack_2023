@@ -1,8 +1,9 @@
 import temp_pfp from '../images/temp_pfp.jpeg';
 
 export const personal_info = {
-    name: "John Doe",
+    name: "ksjd",
     pfp: temp_pfp,
+    streak: 5,
     medications:[
         {
             name: "Medication 1",

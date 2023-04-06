@@ -1,6 +1,7 @@
 import React from 'react';
 import { nutrition_info } from './intro_data';
 import { personal_info } from './intro_data';
+import streak_icon from '../images/streak_icon.png';
 
 async function fetchQuote(){
     try{
@@ -84,8 +85,11 @@ function Cards() {
             </div>
 
             <div className = "profile">
-            <div className='card-title'>Profile</div>
-                <img src = {personal_info.pfp} alt = "Profile Picture" className='user-img'/>
+                <div className='card-title'>Profile</div>
+                <div className = "streak">
+                    <img src = {personal_info.pfp} alt = "Profile" className='user-img'/>
+                    <div className='streak-img'><img src = {streak_icon} alt = "Streak Icon" />{personal_info.streak}</div>
+                </div>
             </div>
 
             <div className = "bmi">

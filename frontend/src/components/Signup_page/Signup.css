@@ -93,6 +93,12 @@
     border-radius: 4px;
 }
 
+.signup .form .submit:hover{
+    /* background: #A8845B; */
+    box-shadow: 0px 0px 0px 0px;
+    border: #000000 2px solid;
+}
+
 .signup .form .acc {
     display: flex;
     width: 66%;
