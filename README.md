@@ -5,7 +5,7 @@
 
 ![last commit][lastcommit-badge]
 ![issues][issues-badge]
-![license][license-badge]
+
 
 This web app is designed to provide elderly people with an easy and convenient way to keep track of their medications, emotions, and physical health. The app allows them to connect with psychologists, meet nearby people, and keep track of their BMI.
 
