@@ -1,5 +1,5 @@
 import React from 'react';
-import { nutrition_info } from './intro_data';
+// import { nutrition_info } from './intro_data';
 import { personal_info } from './intro_data';
 import streak_icon from '../images/streak_icon.png';
 
@@ -21,16 +21,60 @@ async function fetchQuote(){
 
 function Cards() {
 
-    const max_cal = 2200;
-    const max_prot = 50;
-    const max_carbs = 300;
-    const max_fat = 70;
+    // const max_cal = 2200;
+    // const max_prot = 50;
+    // const max_carbs = 300;
+    // const max_fat = 70;
 
-    var calories = (Math.floor((nutrition_info.calories/max_cal)*100));
-    var protein = Math.floor((nutrition_info.protein/max_prot)*100);
-    var carbs = Math.floor((nutrition_info.carbs/max_carbs)*100);
-    var fat = (Math.floor((nutrition_info.fat/max_fat)*100));
+    // var calories = (Math.floor((nutrition_info.calories/max_cal)*100));
+    // var protein = Math.floor((nutrition_info.protein/max_prot)*100);
+    // var carbs = Math.floor((nutrition_info.carbs/max_carbs)*100);
+    // var fat = (Math.floor((nutrition_info.fat/max_fat)*100));
 
+    // function addMedicine(){
+    //     var medicine_name = document.getElementsByClassName('input-medicine')[0].value;
+    //     var medicine_time = document.getElementsByClassName('time')[0].value;
+    //     var medicine_frequency = document.getElementsByClassName('frequency')[0].value;
+    //     var medicine_taken = 0;
+    //     var medicine = {
+    //         name: medicine_name,
+    //         taken: medicine_taken,
+    //         frequency: medicine_frequency,
+    //         time: medicine_time
+    //     };
+    //     personal_info.medications.push(medicine);
+    // }
+
+    // function toggleEdit(e){
+    //     e.preventDefault()
+    //     for (var i = 0; i < document.getElementsByClassName('input').length; i++){
+    //     document.getElementsByClassName('input')[i].classList.toggle('hide');}
+
+    //     for (i = 0; i < document.getElementsByClassName('medicine-list').length; i++){
+    //     document.getElementsByClassName('medicine-list')[i].classList.toggle('hide');}
+    // }
+
+    var divide_nodes = (time) => {
+        return (
+            <div className='node-holder'>
+                {
+                    time.map((t)=>(
+                        <div className='node' style={{width:(100/time.length)-2 + "%"}}>
+                            {t}
+                        </div>
+                    ))
+                }
+            </div>
+        )
+    }
+
+    var medicines_list = personal_info.medications.map((medicine) => 
+        <div className='med'>
+            <div className='medicine-name'>{medicine.name}</div>
+            
+            {divide_nodes(medicine.time)}
+        </div>
+    );
     var bmi = Math.floor(personal_info.weight/(personal_info.height/100)**2);
     var color;
     var bmi_percent = Math.floor((bmi/40)*100);
@@ -58,7 +102,7 @@ function Cards() {
                 </div>
             </div>
 
-            <div className = "nutrition">
+            {/* <div className = "nutrition">
                 <div className='card-title'>Nutrition</div>
                 <input type="text" placeholder="Search for food" />
                 <div>
@@ -82,6 +126,36 @@ function Cards() {
                 <div className = "container">
                     <div className = "progress fat" style = {{width:Math.min(fat, 100) + "%"}}>{fat}%</div>
                 </div>
+            </div> */}
+
+            <div className = "medicine">
+                <div className='card-title'>Medicines</div>
+
+                <div className='input'>
+                    <div className='nom'>Name of Medicine:
+                    <input type="text" placeholder="Add Medicine" className='input-medicine'/>
+                    </div>
+                    {/* <div className='input-holder'>
+                        <input type="time"  className='time'/>
+                        <button>Add</button>
+                    </div> */}
+                    <div className='notad'>
+                        Enter the timings for all the times of day:
+                    </div>
+                    <div className='time-holder'>
+                    <input type="time"  className='time'/>
+                    <input type="time"  className='time'/>
+                    <input type="time"  className='time'/>
+                    <input type="time"  className='time'/>
+                    <input type="time"  className='time'/>
+                    <input type="time"  className='time'/></div>
+                    <button>Add</button>
+                </div>
+
+                <div className = "medicine-list">
+                    {medicines_list}
+                </div>
+
             </div>
 
             <div className = "profile">

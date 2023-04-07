@@ -9,11 +9,18 @@ export const personal_info = {
             name: "Medication 1",
             taken: 1,
             frequency: 2,
+            time: ["12:00", "18:00"]
         },
         {
             name: "Medication 2",
             taken: 3,
             frequency: 4,
+            time: ["8:00", "10:00"]
+        },{
+            name: "Medication 2",
+            taken: 3,
+            frequency: 4,
+            time: ["8:00", "10:00"]
         }
     ],
     conditions:[
