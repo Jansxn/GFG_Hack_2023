@@ -5,7 +5,7 @@
 
 ![last commit][lastcommit-badge]
 ![issues][issues-badge]
-
+![license][license-badge]
 
 This web app is designed to provide elderly people with an easy and convenient way to keep track of their medications, emotions, and physical health. The app allows them to connect with psychologists, meet nearby people, and keep track of their BMI.
 
@@ -27,4 +27,4 @@ This web app is designed to provide elderly people with an easy and convenient w
 
 [lastcommit-badge]: https://img.shields.io/github/last-commit/himanshubanerji/smartIndiaHackathon-2023?color=DDFFBB
 [issues-badge]: https://img.shields.io/github/issues/himanshubanerji/smartIndiaHackathon-2023?color=B2A4FF
-[license-badge]: https://img.shields.io/github/license/himanshubanerji/smartIndiaHackathon-2023
+[license-badge]: https://img.shields.io/github/license/Jansxn/GFG_Hack_2023
