@@ -4,6 +4,8 @@ export const personal_info = {
     name: "ksjd",
     pfp: temp_pfp,
     streak: 5,
+    email:"jj@kk.com",
+    phone: 1234567890,
     medications:[
         {
             name: "Medication 1",
