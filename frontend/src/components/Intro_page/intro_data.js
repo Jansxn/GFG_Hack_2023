@@ -1,10 +1,11 @@
 import temp_pfp from '../images/temp_pfp.jpeg';
-
+import { userDataInitialState } from '../Login_page/Login';
+import React, { useState } from 'react';
 export const personal_info = {
-    name: "ksjd",
+    name: userDataInitialState.fname+' '+userDataInitialState.lname,//userData.fname+' '+userData.lname,
     pfp: temp_pfp,
     streak: 5,
-    email:"jj@kk.com",
+    email:'xyz@gmail.com',
     phone: 1234567890,
     medications:[
         {
