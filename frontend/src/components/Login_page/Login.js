@@ -2,43 +2,56 @@ import React from 'react';
 import './Login.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { validateEmail, validatePassword } from '../authentication';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import google from '../images/google.png';
 import facebook from '../images/facebook.png';
-import { app, auth, database } from '../../index';
-import { getDatabase, ref, update,get } from 'firebase/database';
+import { auth, database } from '../../index';
+import { ref, update, get } from 'firebase/database';
 
-function login() {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  if (validateEmail(email) === false || validatePassword(password) === false) {
-    alert('Enter valid email or password');
-    return;
-  }
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      const databaseRef = ref(database, `users/${user.uid}`);
-      const userData = { 
-        email: user.email,
-        fname: '',
-        lname: '',
-      };
-      get(databaseRef).then((snapshot) => {
-        const userRecord = snapshot.val();
-        userData.fname = userRecord.fname;
-        userData.lname = userRecord.lname;
-        update(databaseRef, userData);
+export var userDataInitialState = {
+  email: '',
+  fname: '',
+  lname: '',
+};
+export const Login = () => {
+  const navigate = useNavigate();
+  const [userData, setUserData] = React.useState(userDataInitialState);
+
+  function handleLogin() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (validateEmail(email) === false || validatePassword(password) === false) {
+      alert('Enter valid email or password');
+      return;
+    }
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        var databaseRef = ref(database, `users/${user.uid}`);
+        const userData = { 
+          email: user.email,
+          fname: '',
+          lname: '',
+        };
+        get(databaseRef).then((snapshot) => {
+          const userRecord = snapshot.val();
+          userData.fname = userRecord.fname;
+          userData.lname = userRecord.lname;
+          update(databaseRef, userData);
+          setUserData(userData);
+          userDataInitialState = userData;
+          console.log(userDataInitialState);
+          navigate('../');
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
       });
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    });
-}
+  }
 
-function Login() {
   return (
     <div className="login">
       <form className="form">
@@ -56,7 +69,7 @@ function Login() {
           <div className="label">Password</div>
         </label>
 
-        <button type="button" className="submit" onClick={login}>
+        <button type="button" className="submit" onClick={handleLogin}>
           Login
         </button>
 
@@ -81,6 +94,5 @@ function Login() {
       </form>
     </div>
   );
-}
-
+};
 export default Login;
