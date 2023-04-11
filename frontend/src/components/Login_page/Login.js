@@ -7,15 +7,20 @@ import google from '../images/google.png';
 import facebook from '../images/facebook.png';
 import { auth, database } from '../../index';
 import { ref, update, get } from 'firebase/database';
+import { AppState } from '../Intro_page/intro_data';
+import temp_pfp from '../images/temp_pfp.jpeg';
 
 export var userDataInitialState = {
   email: '',
   fname: '',
   lname: '',
 };
+
+
 export const Login = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = React.useState(userDataInitialState);
+  const {userData, setUserData} = React.useContext(AppState)
+  // const [userData, setUserData] = React.useState(userDataInitialState);
 
   function handleLogin() {
     const email = document.getElementById('email').value;
@@ -29,17 +34,18 @@ export const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         var databaseRef = ref(database, `users/${user.uid}`);
-        const userData = { 
+        const userDataEx = { 
           email: user.email,
           fname: '',
           lname: '',
         };
         get(databaseRef).then((snapshot) => {
           const userRecord = snapshot.val();
-          userData.fname = userRecord.fname;
-          userData.lname = userRecord.lname;
-          update(databaseRef, userData);
-          setUserData(userData);
+          userDataEx.fname = userRecord.fname;
+          userDataEx.lname = userRecord.lname;
+          update(databaseRef, userDataEx);
+          const newUserData = { ...userData, name: userRecord.fname, lname: userRecord.lname };
+          setUserData(newUserData);
           userDataInitialState = userData;
           console.log(userDataInitialState);
           navigate('../');

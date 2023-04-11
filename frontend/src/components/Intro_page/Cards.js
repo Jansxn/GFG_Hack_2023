@@ -1,6 +1,7 @@
 import React from 'react';
 // import { nutrition_info } from './intro_data';
-import { personal_info } from './intro_data';
+// import { personal_info } from './intro_data';
+import {AppState} from './intro_data';
 import streak_icon from '../images/streak_icon.png';
 
 async function fetchQuote(){
@@ -42,7 +43,7 @@ function Cards() {
     //         frequency: medicine_frequency,
     //         time: medicine_time
     //     };
-    //     personal_info.medications.push(medicine);
+    //     userData.medications.push(medicine);
     // }
 
     // function toggleEdit(e){
@@ -53,6 +54,7 @@ function Cards() {
     //     for (i = 0; i < document.getElementsByClassName('medicine-list').length; i++){
     //     document.getElementsByClassName('medicine-list')[i].classList.toggle('hide');}
     // }
+    const {userData, setUserData} = React.useContext(AppState)
 
     var divide_nodes = (time) => {
         return (
@@ -68,14 +70,14 @@ function Cards() {
         )
     }
 
-    var medicines_list = personal_info.medications.map((medicine) => 
+    var medicines_list = userData.medications.map((medicine) => 
         <div className='med'>
             <div className='medicine-name'>{medicine.name}</div>
             
             {divide_nodes(medicine.time)}
         </div>
     );
-    var bmi = Math.floor(personal_info.weight/(personal_info.height/100)**2);
+    var bmi = Math.floor(userData.weight/(userData.height/100)**2);
     var color;
     var bmi_percent = Math.floor((bmi/40)*100);
 
@@ -161,8 +163,8 @@ function Cards() {
             <div className = "profile">
                 <div className='card-title'>Profile</div>
                 <div className = "streak">
-                    <img src = {personal_info.pfp} alt = "Profile" className='user-img'/>
-                    <div className='streak-img'><img src = {streak_icon} alt = "Streak Icon" />{personal_info.streak}</div>
+                    <img src = {userData.pfp} alt = "Profile" className='user-img'/>
+                    <div className='streak-img'><img src = {streak_icon} alt = "Streak Icon" />{userData.streak}</div>
                 </div>
             </div>
 

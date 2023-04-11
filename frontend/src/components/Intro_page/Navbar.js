@@ -1,6 +1,13 @@
 import React from 'react';
+import { AppState } from './intro_data';
+import temp_pfp from '../images/temp_pfp.jpeg';
 
 function Navbar() {
+  const {userData, setUserData} = React.useContext(AppState)
+  function logout(){
+    setUserData({name: '',lname: '',pfp: temp_pfp,streak: 0,email:'',phone: 0,medications:[],conditions:[],weight: 0,height: 0,age: 0});
+  }
+
     return (
       <div className="navbar">
           <nav className = "nav">
@@ -22,7 +29,7 @@ function Navbar() {
                 </div>
                 <a className= "nav-item i3">Volunteer</a>
                 <a className = "nav-item i4">Games</a>
-                <a className="nav-item i5 contact">Contact Us</a>
+                <a className="nav-item i5 contact" onClick={logout}>Log Out</a>
             </span>
           </nav>
       </div>

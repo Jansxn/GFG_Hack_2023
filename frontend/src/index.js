@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
+import Context from './components/Intro_page/intro_data'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAzMoM_IHYJa_s3wWnuif0noRhegwTFags",
@@ -24,7 +25,9 @@ const database = getDatabase(app);
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Context>
       <App />
+    </Context>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,10 +1,11 @@
 import React from 'react';
-import { personal_info } from './intro_data.js';
+// import { personal_info } from './intro_data.js';
+import {AppState} from './intro_data.js';
 
 function Greeting() {
-
+  const {userData, setUserData} = React.useContext(AppState)
     // var medications = personal_info.medications.map((medication) => {
-    const name = personal_info.name.split(" ")[0];
+    const name = userData.name.split(" ")[0];
 
     return (
       <div className="greet">
