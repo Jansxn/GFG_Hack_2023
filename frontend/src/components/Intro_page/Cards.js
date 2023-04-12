@@ -165,7 +165,11 @@ function Cards() {
                 <div className='card-title'>Profile</div>
                 <div className = "streak">
                 <Link to="/profile"><img src = {userData.pfp} alt = "Profile" className='user-img'/></Link>
-                    <div className='streak-img'><img src = {streak_icon} alt = "Streak Icon" />{userData.streak}</div>
+                <Link to="/emo">
+                    <div className='streak-img'>
+                        <img src = {streak_icon} alt = "Streak Icon" />{userData.streak}
+                    </div>
+                </Link>
                 </div>
             </div>
 

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+.emo{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    background: #8ED6DE;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.emo .vid-container {
+    width: 60%;
+    height: 60%;
+    background: #D9C6F4;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: #000000 2px solid;
+
+}
+
+.emo .vid-container .vid{
+ border: #fff 7px solid;
+ border-radius: 20%;
+}
+
+
+.emo .but{
+    background: #F8845B;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+.emo .hide{
+    display: none;
+}

@@ -399,6 +399,7 @@
     position: relative;
     color: #ffffff;
     font-size: 0.8rem;
+    text-decoration: none;
 }
 
 .cards .profile .streak .streak-img{
@@ -407,10 +408,12 @@
     position: absolute;
     right: 0;
     top: 0;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
+    text-decoration: none;
 }
 
 .cards .bmi{

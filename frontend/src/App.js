@@ -6,6 +6,7 @@ import Intro from './components/Intro_page/Intro';
 import Login from './components/Login_page/Login';
 import Signup from './components/Signup_page/Signup';
 import Profile from './components/Profile_page/Profile';
+import Emotion from './components/Webcam_page/emotion';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/emo" element={<Emotion />} />
     </Routes>
     // <div className="App">
     //     <Intro />
