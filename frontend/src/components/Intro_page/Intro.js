@@ -3,11 +3,13 @@ import Navbar from './Navbar';
 import Greeting from './Greeting';
 import Cards from './Cards';
 import './Intro.css';
-import { personal_info } from './intro_data';
+// import { personal_info } from './intro_data';
 import GoToSign from './GoToSign';
+import { AppState } from './intro_data';
 
 function Intro() {
-    if (personal_info.name === "") {
+    const {userData, setUserData} = React.useContext(AppState)
+    if (userData.name === "") {
         return (
             <div className="intro">
                 <GoToSign />

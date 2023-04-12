@@ -1,10 +1,13 @@
 import temp_pfp from '../images/temp_pfp.jpeg';
+// import { user } from '../../App';
+import React, { useState, createContext } from 'react';
 
 export const personal_info = {
-    name: "ksjd",
+    name: 'ajefjsb',//userData.fname+' '+userData.lname,
+    lname: 'sakdnaksd',
     pfp: temp_pfp,
     streak: 5,
-    email:"jj@kk.com",
+    email:'xyz@gmail.com',
     phone: 1234567890,
     medications:[
         {
@@ -35,9 +38,40 @@ export const personal_info = {
     age: 55
 }
 
-export const nutrition_info = {
-    calories: 900,
-    protein: 100,
-    carbs: 100,
-    fat: 100,
+// export const nutrition_info = {
+//     calories: 900,
+//     protein: 100,
+//     carbs: 100,
+//     fat: 100,
+// }
+
+export const personal_info_default = {
+    name: '',//userData.fname+' '+userData.lname,
+    lname: '',
+    pfp: temp_pfp,
+    streak: 0,
+    email:'',
+    phone: 0,
+    medications:[
+    ],
+    conditions:[
+    ],
+    weight: 0,
+    height: 0,
+    age: 0
 }
+
+
+
+export const AppState = createContext({userData: personal_info_default})
+
+const Context = ({ children }) => {
+    const [userData, setUserData] = useState(personal_info_default);
+    return (
+            <AppState.Provider value={{userData, setUserData}}>
+                {children}
+            </AppState.Provider>
+    )
+}
+
+export default Context
