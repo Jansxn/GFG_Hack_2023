@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppState } from './intro_data';
 import temp_pfp from '../images/temp_pfp.jpeg';
+import {Link} from 'react-router-dom';
 
 function Navbar() {
   const {userData, setUserData} = React.useContext(AppState)
@@ -14,8 +15,8 @@ function Navbar() {
             <input id="menu__toggle" type="checkbox" />
             <label className ="menu__btn" htmlFor="menu__toggle"><span></span></label>
             <span className = "nav-links">
-                <a className= "nav-item i0">logo</a>
-                <a className= "nav-item i1">Home</a>
+                <Link to="/" className= "nav-item i0">logo</Link>
+                <Link to="/" className= "nav-item i1">Home</Link>
                 <div className = "nav-item meet i2">
                   <label htmlFor = "expand-box" className= " meet">Meet</label>
                   <span className = "meet-items">

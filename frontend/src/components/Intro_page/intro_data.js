@@ -3,8 +3,8 @@ import temp_pfp from '../images/temp_pfp.jpeg';
 import React, { useState, createContext } from 'react';
 
 export const personal_info = {
-    name: '',//userData.fname+' '+userData.lname,
-    lname: '',
+    name: 'ajefjsb',//userData.fname+' '+userData.lname,
+    lname: 'sakdnaksd',
     pfp: temp_pfp,
     streak: 5,
     email:'xyz@gmail.com',

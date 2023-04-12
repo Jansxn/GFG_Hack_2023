@@ -3,6 +3,7 @@ import React from 'react';
 // import { personal_info } from './intro_data';
 import {AppState} from './intro_data';
 import streak_icon from '../images/streak_icon.png';
+import {Link} from 'react-router-dom';
 
 async function fetchQuote(){
     try{
@@ -163,7 +164,7 @@ function Cards() {
             <div className = "profile">
                 <div className='card-title'>Profile</div>
                 <div className = "streak">
-                    <img src = {userData.pfp} alt = "Profile" className='user-img'/>
+                <Link to="/profile"><img src = {userData.pfp} alt = "Profile" className='user-img'/></Link>
                     <div className='streak-img'><img src = {streak_icon} alt = "Streak Icon" />{userData.streak}</div>
                 </div>
             </div>

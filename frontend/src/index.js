@@ -25,9 +25,9 @@ const database = getDatabase(app);
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Context>
-      <App />
-    </Context>
+      <Context>
+        <App />
+      </Context>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
