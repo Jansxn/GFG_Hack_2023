@@ -43,8 +43,9 @@ export const Login = () => {
           const userRecord = snapshot.val();
           userDataEx.fname = userRecord.fname;
           userDataEx.lname = userRecord.lname;
+          userDataEx.email = userRecord.email;
           update(databaseRef, userDataEx);
-          const newUserData = { ...userData, name: userRecord.fname, lname: userRecord.lname };
+          const newUserData = { ...userData, name: userRecord.fname, lname: userRecord.lname, email: userRecord.email };
           setUserData(newUserData);
           userDataInitialState = userData;
           console.log(userDataInitialState);

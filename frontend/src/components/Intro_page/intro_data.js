@@ -2,7 +2,7 @@ import temp_pfp from '../images/temp_pfp.jpeg';
 // import { user } from '../../App';
 import React, { useState, createContext } from 'react';
 
-export const personal_info = {
+export const personal_info_demo = {
     name: 'ajefjsb',//userData.fname+' '+userData.lname,
     lname: 'sakdnaksd',
     pfp: temp_pfp,
@@ -13,18 +13,15 @@ export const personal_info = {
         {
             name: "Medication 1",
             taken: 1,
-            frequency: 2,
             time: ["12:00", "18:00"]
         },
         {
             name: "Medication 2",
             taken: 3,
-            frequency: 4,
             time: ["8:00", "10:00"]
         },{
             name: "Medication 2",
             taken: 3,
-            frequency: 4,
             time: ["8:00", "10:00"]
         }
     ],
@@ -61,14 +58,17 @@ export const personal_info_default = {
     age: 0
 }
 
+export const medicine_data = []
+
 
 
 export const AppState = createContext({userData: personal_info_default})
 
 const Context = ({ children }) => {
     const [userData, setUserData] = useState(personal_info_default);
+    const [med, setMed] = useState(medicine_data);
     return (
-            <AppState.Provider value={{userData, setUserData}}>
+            <AppState.Provider value={{userData, setUserData, med, setMed}}>
                 {children}
             </AppState.Provider>
     )
