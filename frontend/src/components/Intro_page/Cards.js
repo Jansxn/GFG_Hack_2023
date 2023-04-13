@@ -55,7 +55,7 @@ function Cards() {
     //     for (i = 0; i < document.getElementsByClassName('medicine-list').length; i++){
     //     document.getElementsByClassName('medicine-list')[i].classList.toggle('hide');}
     // }
-    const {userData, setUserData} = React.useContext(AppState)
+    const {userData, setMed, med} = React.useContext(AppState)
 
     var divide_nodes = (time) => {
         return (
@@ -134,7 +134,7 @@ function Cards() {
             <div className = "medicine">
                 <div className='card-title'>Medicines</div>
 
-                <div className='input'>
+                <form className='input'>
                     <div className='nom'>Name of Medicine:
                     <input type="text" placeholder="Add Medicine" className='input-medicine'/>
                     </div>
@@ -152,8 +152,19 @@ function Cards() {
                     <input type="time"  className='time'/>
                     <input type="time"  className='time'/>
                     <input type="time"  className='time'/></div>
-                    <button>Add</button>
-                </div>
+                    <button onClick={
+                        (e)=>{
+                            e.preventDefault()
+                            var medicine_name = document.getElementsByClassName('input-medicine')[0].value;
+                            var medicine_time = document.getElementsByClassName('time');
+                            var time_arr =[];
+                            for (var i = 0 ;i<medicine_time.length; i++){
+                                time_arr.push(medicine_time[i].value)
+                            }
+                            setMed([medicine_name, time_arr, 0])
+                            console.log(med)
+                    }}>Add</button>
+                </form>
 
                 <div className = "medicine-list">
                     {medicines_list}

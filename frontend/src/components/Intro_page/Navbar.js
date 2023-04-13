@@ -7,6 +7,7 @@ function Navbar() {
   const {userData, setUserData} = React.useContext(AppState)
   function logout(){
     setUserData({name: '',lname: '',pfp: temp_pfp,streak: 0,email:'',phone: 0,medications:[],conditions:[],weight: 0,height: 0,age: 0});
+    window.location.reload()
   }
 
     return (
