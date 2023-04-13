@@ -8,7 +8,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import Context from './components/Intro_page/intro_data'
-
+import { getFirestore } from "firebase/firestore";
+import Profile from './components/Profile_page/Profile';
 const firebaseConfig = {
   apiKey: "AIzaSyAzMoM_IHYJa_s3wWnuif0noRhegwTFags",
   authDomain: "gcdproject-f2c73.firebaseapp.com",
@@ -21,6 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
+const storedb = getFirestore(app);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -38,4 +40,4 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-export { app, auth, database };
+export { app, auth, database,storedb};
