@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getDatabase, ref, set } from 'firebase/database';
 import {app,database,auth,storedb} from '../../index';
+import { AppState } from './intro_data';
+
+function useMedData(){
+  const [med] = React.useContext(AppState);
+  return med
+}
 
 // Function to create a collection for a user if it doesn't exist
 function createUserCollection(userId) {
