@@ -4,6 +4,7 @@ import React from 'react';
 import {AppState} from './intro_data';
 import streak_icon from '../images/streak_icon.png';
 import {Link} from 'react-router-dom';
+import { searchNutrients } from './food_api';
 
 async function fetchQuote(){
     try{
@@ -27,7 +28,6 @@ function Cards() {
     const max_prot = 50;
     const max_carbs = 300;
     const max_fat = 70;
-
     const {userData, setMed, med} = React.useContext(AppState)
 
     var calories = (Math.floor((userData.calories/max_cal)*100));
@@ -111,7 +111,7 @@ function Cards() {
                 <input type="text" placeholder="Search for food" />
                 <div>
                 <input type="number" placeholder="Quantity" style={{width:"60%"}}/>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add"/>
                 </div>
                 
                 Cal: 

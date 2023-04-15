@@ -9,7 +9,7 @@ import { auth, database } from '../../index';
 import { ref, update, get } from 'firebase/database';
 import { AppState } from '../Intro_page/intro_data';
 import temp_pfp from '../images/temp_pfp.jpeg';
-
+import '../Intro_page/food_api';
 export var userDataInitialState = {
   email: '',
   fname: '',

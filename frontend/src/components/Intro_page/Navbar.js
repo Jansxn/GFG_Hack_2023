@@ -1,13 +1,19 @@
 import React from 'react';
 import { AppState } from './intro_data';
 import temp_pfp from '../images/temp_pfp.jpeg';
-import {Link} from 'react-router-dom';
-
+import {Link, useNavigate} from 'react-router-dom';
+import { auth, database } from '../../index';
 function Navbar() {
+  const navigate = useNavigate();
   const {userData, setUserData} = React.useContext(AppState)
   function logout(){
-    setUserData({name: '',lname: '',pfp: temp_pfp,streak: 0,email:'',phone: 0,medications:[],conditions:[],weight: 0,height: 0,age: 0});
+        setUserData({name: '',lname: '',pfp: temp_pfp,streak: 0,email:'',phone: 0,medications:[],conditions:[],weight: 0,height: 0,age: 0});
     window.location.reload()
+    auth.signOut().then(() => {
+      navigate('');
+    }).catch((error) => {
+      // An error happened.
+    });
   }
 
     return (
