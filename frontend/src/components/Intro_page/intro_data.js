@@ -53,7 +53,11 @@ export const personal_info_default = {
     ],
     weight: 0,
     height: 0,
-    age: 0
+    age: 0,
+    calories: 0,
+    protein: 0,
+    carbs: 0,
+    fat: 0
 }
 
 export const medicine_data = []

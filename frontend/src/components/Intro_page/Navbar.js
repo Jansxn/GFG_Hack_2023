@@ -22,7 +22,7 @@ function Navbar() {
             <input id="menu__toggle" type="checkbox" />
             <label className ="menu__btn" htmlFor="menu__toggle"><span></span></label>
             <span className = "nav-links">
-                <Link to="/" className= "nav-item i0">logo</Link>
+                <Link to="/" className= "nav-item i0">EDC</Link>
                 <Link to="/" className= "nav-item i1">Home</Link>
                 <div className = "nav-item meet i2">
                   <label htmlFor = "expand-box" className= " meet">Meet</label>

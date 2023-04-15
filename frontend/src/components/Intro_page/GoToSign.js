@@ -11,7 +11,7 @@ function GoToSign() {
     }
     return (
         <div className="gts">
-            <div className = "welcome">Welcome to EDUCARE</div>
+            <div className = "welcome">Welcome to ELDERLYCARE</div>
             <div className='options'>
                 <button className='log-in' onClick = {gotologin}>Log In</button>
                 <button className='sign-up' onClick={gotosignup}>Sign Up</button>
