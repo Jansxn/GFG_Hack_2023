@@ -32,15 +32,13 @@ export const personal_info_demo = {
     ],
     weight: 50,
     height: 170,
-    age: 55
+    age: 55,
+    
+    calories: 900,
+    protein: 100,
+    carbs: 100,
+    fat: 100
 }
-
-// export const nutrition_info = {
-//     calories: 900,
-//     protein: 100,
-//     carbs: 100,
-//     fat: 100,
-// }
 
 export const personal_info_default = {
     name: '',//userData.fname+' '+userData.lname,

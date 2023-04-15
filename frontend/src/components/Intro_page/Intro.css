@@ -339,6 +339,44 @@
     border-radius: 15px;
 }
 
+.cards .nutrition{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 2.5%;
+    text-align: center;
+    background-color: #8ED6DE;
+    border-width: 2px;
+    border-style: solid;
+    grid-row: span 2;
+    border-color: #000000;
+    border-radius: 6px;
+}
+
+.cards .nutrition input{
+    border-radius: 5px;
+    max-width: 90%;
+}
+
+.cards .nutrition .container {
+    background-color: #000000;
+    width: 80%;
+    border-radius: 15px;
+}
+
+.cards .nutrition .progress {
+    background-color: rgb(116, 194, 92);
+    border: #ffffff 3px solid;
+    color: white;
+    padding: 1%;
+    text-align: right;
+    height:20px;
+    font-size: 15px;
+    padding-right: 5px;
+    border-radius: 15px;
+}
+
 
 .cards .query{
     border-width: 2px;
