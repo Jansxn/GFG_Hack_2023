@@ -23,15 +23,17 @@ async function fetchQuote(){
 
 function Cards() {
 
-    // const max_cal = 2200;
-    // const max_prot = 50;
-    // const max_carbs = 300;
-    // const max_fat = 70;
+    const max_cal = 2200;
+    const max_prot = 50;
+    const max_carbs = 300;
+    const max_fat = 70;
 
-    // var calories = (Math.floor((nutrition_info.calories/max_cal)*100));
-    // var protein = Math.floor((nutrition_info.protein/max_prot)*100);
-    // var carbs = Math.floor((nutrition_info.carbs/max_carbs)*100);
-    // var fat = (Math.floor((nutrition_info.fat/max_fat)*100));
+    const {userData, setMed, med} = React.useContext(AppState)
+
+    var calories = (Math.floor((userData.calories/max_cal)*100));
+    var protein = Math.floor((userData.protein/max_prot)*100);
+    var carbs = Math.floor((userData.carbs/max_carbs)*100);
+    var fat = (Math.floor((userData.fat/max_fat)*100));
 
     // function addMedicine(){
     //     var medicine_name = document.getElementsByClassName('input-medicine')[0].value;
@@ -55,29 +57,28 @@ function Cards() {
     //     for (i = 0; i < document.getElementsByClassName('medicine-list').length; i++){
     //     document.getElementsByClassName('medicine-list')[i].classList.toggle('hide');}
     // }
-    const {userData, setMed, med} = React.useContext(AppState)
 
-    var divide_nodes = (time) => {
-        return (
-            <div className='node-holder'>
-                {
-                    time.map((t)=>(
-                        <div className='node' style={{width:(100/time.length)-2 + "%"}}>
-                            {t}
-                        </div>
-                    ))
-                }
-            </div>
-        )
-    }
+    // var divide_nodes = (time) => {
+    //     return (
+    //         <div className='node-holder'>
+    //             {
+    //                 time.map((t)=>(
+    //                     <div className='node' style={{width:(100/time.length)-2 + "%"}}>
+    //                         {t}
+    //                     </div>
+    //                 ))
+    //             }
+    //         </div>
+    //     )
+    // }
 
-    var medicines_list = userData.medications.map((medicine) => 
-        <div className='med'>
-            <div className='medicine-name'>{medicine.name}</div>
+    // var medicines_list = userData.medications.map((medicine) => 
+    //     <div className='med'>
+    //         <div className='medicine-name'>{medicine.name}</div>
             
-            {divide_nodes(medicine.time)}
-        </div>
-    );
+    //         {divide_nodes(medicine.time)}
+    //     </div>
+    // );
     var bmi = Math.floor(userData.weight/(userData.height/100)**2);
     var color;
     var bmi_percent = Math.floor((bmi/40)*100);
@@ -105,7 +106,7 @@ function Cards() {
                 </div>
             </div>
 
-            {/* <div className = "nutrition">
+            <div className = "nutrition">
                 <div className='card-title'>Nutrition</div>
                 <input type="text" placeholder="Search for food" />
                 <div>
@@ -129,19 +130,15 @@ function Cards() {
                 <div className = "container">
                     <div className = "progress fat" style = {{width:Math.min(fat, 100) + "%"}}>{fat}%</div>
                 </div>
-            </div> */}
+            </div>
 
-            <div className = "medicine">
+            {/* <div className = "medicine">
                 <div className='card-title'>Medicines</div>
 
                 <form className='input'>
                     <div className='nom'>Name of Medicine:
                     <input type="text" placeholder="Add Medicine" className='input-medicine'/>
                     </div>
-                    {/* <div className='input-holder'>
-                        <input type="time"  className='time'/>
-                        <button>Add</button>
-                    </div> */}
                     <div className='notad'>
                         Enter the timings for all the times of day:
                     </div>
@@ -170,7 +167,7 @@ function Cards() {
                     {medicines_list}
                 </div>
 
-            </div>
+            </div> */}
 
             <div className = "profile">
                 <div className='card-title'>Profile</div>
