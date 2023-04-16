@@ -12,6 +12,9 @@ This web app is designed to provide elderly people with an easy and convenient w
 
 </div>
 
+## First time sigining
+Login by first making your account on the signup page and then going back to the login page and proceeding with the logging in the login page.
+
 
 ## Features  
 - **Medication Tracker**: Users can set reminders for their medications and keep track of when they take them. They can also add notes to each medication to keep track of any side effects or other important information
