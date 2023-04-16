@@ -110,20 +110,20 @@ function Cards() {
                 <div className='card-title'>Nutrition</div>
                 <input type="text" placeholder="Search for food" className='food-type'/>
                 <div>
-                <input type="number" placeholder="Quantity" style={{width:"60%"}}/>
+                <input type="number" placeholder="Quantity" style={{width:"60%"}} className='quantity'/>
                 <input type="submit" value="Add" onClick={(e)=>{
                     e.preventDefault();
                     console.log(document.getElementsByClassName('food-type')[0].value);
+                    var quant = parseInt(document.getElementsByClassName('quantity')[0].value, 10);
                     searchNutrients(document.getElementsByClassName('food-type')[0].value).then((u)=>{
                         setUserData({
                             ...userData,
-                            calories: userData.calories + u.calories,
-                            protein: userData.protein + u.protein,
-                            carbs: userData.carbs + u.carbs,
-                            fat: userData.fat + u.fat
+                            calories: userData.calories + (quant*u.calories),
+                            protein: userData.protein + (quant*u.protein),
+                            carbs: userData.carbs + (quant*u.carbs),
+                            fat: userData.fat + (quant*u.fat)
                         });
                     });
-                    console.log(userData);
                 }}/>
                 </div>
                 

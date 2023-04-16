@@ -2,7 +2,7 @@ import cv2
 from deepface import DeepFace
 from functools import wraps
 
-cap = cv2.VideoCapture('./vid/vid.mp4')
+cap = cv2.VideoCapture(0)
 finalans = []
 while(cap.isOpened()):
     ret, frame = cap.read()
