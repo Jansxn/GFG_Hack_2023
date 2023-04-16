@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+
+.games{
+    font-family: 'Nunito', sans-serif;
+}
+
+.games .head{
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+}

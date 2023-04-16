@@ -4,6 +4,7 @@ import React from 'react';
 import {AppState} from './intro_data';
 import streak_icon from '../images/streak_icon.png';
 import {Link} from 'react-router-dom';
+import { searchNutrients } from './food_api';
 
 async function fetchQuote(){
     try{
@@ -27,8 +28,7 @@ function Cards() {
     const max_prot = 50;
     const max_carbs = 300;
     const max_fat = 70;
-
-    const {userData, setMed, med} = React.useContext(AppState)
+    const {userData, setMed, med, setUserData} = React.useContext(AppState)
 
     var calories = (Math.floor((userData.calories/max_cal)*100));
     var protein = Math.floor((userData.protein/max_prot)*100);
@@ -108,10 +108,23 @@ function Cards() {
 
             <div className = "nutrition">
                 <div className='card-title'>Nutrition</div>
-                <input type="text" placeholder="Search for food" />
+                <input type="text" placeholder="Search for food" className='food-type'/>
                 <div>
                 <input type="number" placeholder="Quantity" style={{width:"60%"}}/>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add" onClick={(e)=>{
+                    e.preventDefault();
+                    console.log(document.getElementsByClassName('food-type')[0].value);
+                    searchNutrients(document.getElementsByClassName('food-type')[0].value).then((u)=>{
+                        setUserData({
+                            ...userData,
+                            calories: userData.calories + u.calories,
+                            protein: userData.protein + u.protein,
+                            carbs: userData.carbs + u.carbs,
+                            fat: userData.fat + u.fat
+                        });
+                    });
+                    console.log(userData);
+                }}/>
                 </div>
                 
                 Cal: 

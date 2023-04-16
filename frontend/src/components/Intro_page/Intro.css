@@ -63,11 +63,14 @@
 .navbar .nav .nav-links .meet .meet-items{
     padding: 5px;
     width:110%;
+    color: #000000;
 }
 
 .navbar .nav .nav-links .meet .meet-items .meet-item{
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
+    color: #000000;
     /* text-align: left; */
 }
 
