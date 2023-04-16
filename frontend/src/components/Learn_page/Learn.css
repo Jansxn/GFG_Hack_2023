@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+
+.learn{
+    font-family: 'Nunito', sans-serif;
+}
+
+.learn .head{
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+}
