@@ -9,11 +9,11 @@
 
 This web app is designed to provide elderly people with an easy and convenient way to keep track of their medications, emotions, and physical health. The app allows them to connect with psychologists, meet nearby people, and keep track of their BMI.
 
-
 </div>
 
 ## First time sigining
 Login by first making your account on the signup page and then going back to the login page and proceeding with the logging in the login page.
+![alt text](./images/login.jpg?raw=true)
 
 
 ## Features  
@@ -22,6 +22,7 @@ Login by first making your account on the signup page and then going back to the
 - **Psychologist Connection**: Users can connect with licensed psychologists through the app to get professional support and advice.
 - **Meet Nearby People**: Users can find and connect with nearby people who share similar interests and hobbies, providing a social support network.
 - **BMI Tracker**: Users can keep track of their weight and calculate their BMI to monitor their physical health.
+- ![alt text](./images/frontpage.jpg?raw=true)
 
 ### Note for Hackathon Judges and Viewers
 ***TEAM: FITBIT FIGHTERS***
