@@ -75,7 +75,7 @@ function Profile() {
           <label htmlFor="weight">Weight (kg)</label>
           <input type="number" id="weight" name="weight" placeholder="Your weight.." defaultValue={userData.weight} />
 
-          <label htmlFor="height">Height (m)</label>
+          <label htmlFor="height">Height (cm)</label>
           <input type="text" id="height" name="height" placeholder="Your height.." defaultValue={userData.height} />
 
           <button type="submit">Submit</button>
